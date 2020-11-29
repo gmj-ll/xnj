@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  </head>
+  <script>
+
+var request = require("request");
+
+var url = 'http://47.111.177.25/api/registered.php'
+request({
+  url: url,
+  method: "POST",
+  json: true,
+  headers: {
+    "content-type": "application/json",
+  },
+  body: {
+    username: "gmj",
+    password: "666",
+  }
+}, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body);
+  }
+  else {
+    console.log(response)
+  }
+});
+  </script>
+  <body>  
+  </body>
+</html>
